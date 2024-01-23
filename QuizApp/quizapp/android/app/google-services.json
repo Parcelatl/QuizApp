@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "798676685111",
+    "project_id": "quizapp-d0003",
+    "storage_bucket": "quizapp-d0003.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:798676685111:android:eb68c2e8a8a52cf8d10ab2",
+        "android_client_info": {
+          "package_name": "com.example.quizapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKuR3ydKL1YIHXN2Sg8V1h8k0qPlgrF9w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:798676685111:android:b0ec09ab8ab83116d10ab2",
+        "android_client_info": {
+          "package_name": "com.example.tempo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKuR3ydKL1YIHXN2Sg8V1h8k0qPlgrF9w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
