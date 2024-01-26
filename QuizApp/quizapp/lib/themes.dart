@@ -9,7 +9,7 @@ var appTheme = ThemeData(
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(5)),
-      backgroundColor: Colors.grey[900],
+      backgroundColor: Colors.grey[850],
       foregroundColor: Colors.white,
     ),
   ),
