@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quizapp/Shared/error.dart';
-import 'package:quizapp/Shared/loading.dart';
-import 'package:quizapp/Shared/progress_bar.dart';
 
 class TopicsScreen extends StatelessWidget {
   const TopicsScreen({super.key});
@@ -42,7 +39,7 @@ class TopicsScreen extends StatelessWidget {
               flex: 3,
               child: Image.asset(image,
                   fit: BoxFit.cover)),
-          Expanded(
+          Expanded(flex: 2,
             child: Container(
               color: Colors.grey[900],
               child: Column(

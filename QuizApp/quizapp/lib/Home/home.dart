@@ -4,6 +4,7 @@ import 'package:quizapp/Services/auth.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quizapp/Shared/error.dart';
 import 'package:quizapp/Shared/loading.dart';
+import 'package:quizapp/Shared/progress_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,6 +12,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
+        AnimatedProgressbar apb = const AnimatedProgressbar();
+
 
     double screenWidth = MediaQuery.of(context).size.width;
     //double screenHeight = MediaQuery.of(context).size.height;
@@ -33,7 +37,7 @@ class HomeScreen extends StatelessWidget {
             return Scaffold(
               key: scaffoldKey,
               appBar: AppBar(
-                title: const Text('Welcome!'),
+                title: const Text('Welcome!'),             //const Text('Welcome!'),
                 centerTitle: true,
                 actions: [
                   IconButton(
@@ -59,18 +63,21 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               body: Center(
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: SizedBox(
-                    height: 50 * 2,
-                    width: 200 * 2,
-                    child: ElevatedButton.icon(
-                      onPressed: () => Navigator.pushNamed(context, '/topics'),
-                      icon: const Icon(Icons.play_arrow),
-                      label:
-                          const Text('Play', textScaler: TextScaler.linear(4)),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    SizedBox(
+                      height: 50 * 2,
+                      width: 200 * 2,
+                      child: ElevatedButton.icon(
+                        onPressed: () => Navigator.pushNamed(context, '/topics'),
+                        icon: const Icon(Icons.play_arrow),
+                        label:
+                            const Text('Play', textScaler: TextScaler.linear(4)),
+                      ),
                     ),
-                  ),
+                    const SizedBox(height: 5),
+                  ],
                 ),
               ),
             );

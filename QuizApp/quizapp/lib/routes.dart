@@ -1,5 +1,7 @@
 import 'Home/home.dart';
 import 'Quiz/quiz.dart';
+import 'Shared/error.dart';
+import 'Shared/loading.dart';
 import 'Subjects/english.dart';
 import 'Subjects/history.dart';
 import 'Subjects/math.dart';
@@ -23,4 +25,7 @@ var appRoutes = {
   '/tech': (context) => const TechnologyExam(),
   '/history': (context) => const HistoryExam(),
   '/space': (context) => const SpaceExam(),
+
+  '/error': (context) => const ErrorMessage(),
+  '/loading': (context) => const LoadingScreen(),
 };

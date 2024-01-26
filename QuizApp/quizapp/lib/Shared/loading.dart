@@ -5,10 +5,29 @@ class Loader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
-      width: 250,
-      height: 250,
-      child: CircularProgressIndicator(),
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/QuizQuest.ico',
+              scale: 1.5,
+            ),
+            const SizedBox(
+              height: 12.5,
+            ),
+            const Text('QuizQuest', textScaler: TextScaler.linear(2)),
+            const SizedBox(
+              height: 75,
+            ),
+            const CircularProgressIndicator(
+              strokeWidth: 4,
+              strokeCap: StrokeCap.round,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
