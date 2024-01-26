@@ -4,7 +4,6 @@ import 'package:quizapp/Services/auth.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quizapp/Shared/error.dart';
 import 'package:quizapp/Shared/loading.dart';
-import 'package:quizapp/Shared/progress_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -12,9 +11,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
-
-        AnimatedProgressbar apb = const AnimatedProgressbar();
-
 
     double screenWidth = MediaQuery.of(context).size.width;
     //double screenHeight = MediaQuery.of(context).size.height;
