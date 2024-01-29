@@ -19,25 +19,35 @@ class ProfileScreen extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(FontAwesomeIcons.user, size: 60),
-                  SizedBox(
+                  Container(
+                    height: 100,
+                    width: 100,
+                    clipBehavior: Clip.antiAlias,
+                    decoration: BoxDecoration(
+                        color: Colors.grey[800],
+                       shape: BoxShape.circle),
+                    child: const Icon(FontAwesomeIcons.solidIdBadge, size: 75),
+                  ),
+                  const SizedBox(width: 15),
+                  const SizedBox(
                     height: 100,
                     width: 250,
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'First name',
+                          'Abdulellah',
                           textScaler: TextScaler.linear(1.5),
                         ),
-                        Divider(thickness: 3),
+                        Divider(thickness: 2),
                         Text(
-                          'Second Name',
+                          'Altowaijri',
                           textScaler: TextScaler.linear(1.5),
                         ),
-                        Divider(thickness: 3),
+                        Divider(thickness: 2),
                       ],
                     ),
                   ),
