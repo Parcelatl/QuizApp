@@ -17,7 +17,7 @@ var appRoutes = {
   '/login': (context) => const LoginScreen(),
   '/topics': (context) => const TopicsScreen(),
   '/profile': (context) => const ProfileScreen(),
-  '/quiz': (context) => const QuizScreen(),
+  //'/quiz': (context) => const QuizScreen(),
 
   '/math': (context) => const MathExam(),
   '/english': (context) => const EnglishExam(),
