@@ -1,5 +1,5 @@
 import 'Home/home.dart';
-import 'Quiz/quiz.dart';
+//import 'Quiz/quiz.dart';
 import 'Subjects/english.dart';
 import 'Subjects/history.dart';
 import 'Subjects/math.dart';
@@ -15,7 +15,7 @@ var appRoutes = {
   '/login': (context) => const LoginScreen(),
   '/topics': (context) => const TopicsScreen(),
   '/profile': (context) => const ProfileScreen(),
-  '/quiz': (context) => const QuizScreen(),
+  //'/quiz': (context) => const QuizScreen(),
 
   '/math': (context) => const MathExam(),
   '/english': (context) => const EnglishExam(),

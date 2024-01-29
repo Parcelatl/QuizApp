@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quizapp/Shared/error.dart';
-import 'package:quizapp/Shared/loading.dart';
-import 'package:quizapp/Shared/progress_bar.dart';
 
 class TopicsScreen extends StatelessWidget {
   const TopicsScreen({super.key});
