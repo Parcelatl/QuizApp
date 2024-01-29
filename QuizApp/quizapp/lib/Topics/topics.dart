@@ -39,7 +39,7 @@ class TopicsScreen extends StatelessWidget {
               flex: 3,
               child: Image.asset(image,
                   fit: BoxFit.cover)),
-          Expanded(
+          Expanded(flex: 2,
             child: Container(
               color: Colors.grey[900],
               child: Column(

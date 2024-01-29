@@ -16,5 +16,5 @@ var appTheme = ThemeData(
   iconTheme: const IconThemeData(
     color: Colors.white,
   ),
-  fontFamily: GoogleFonts.aDLaMDisplay().fontFamily,
+  fontFamily: GoogleFonts.aDLaMDisplay().fontFamily, //ADlam Here
 );

@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
             return Scaffold(
               key: scaffoldKey,
               appBar: AppBar(
-                title: const Text('Welcome!'),
+                title: const Text('Welcome!'),             //const Text('Welcome!'),
                 centerTitle: true,
                 actions: [
                   IconButton(
@@ -59,18 +59,21 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               body: Center(
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: SizedBox(
-                    height: 50 * 2,
-                    width: 200 * 2,
-                    child: ElevatedButton.icon(
-                      onPressed: () => Navigator.pushNamed(context, '/topics'),
-                      icon: const Icon(Icons.play_arrow),
-                      label:
-                          const Text('Play', textScaler: TextScaler.linear(4)),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    SizedBox(
+                      height: 50 * 2,
+                      width: 200 * 2,
+                      child: ElevatedButton.icon(
+                        onPressed: () => Navigator.pushNamed(context, '/topics'),
+                        icon: const Icon(Icons.play_arrow),
+                        label:
+                            const Text('Play', textScaler: TextScaler.linear(4)),
+                      ),
                     ),
-                  ),
+                    const SizedBox(height: 5),
+                  ],
                 ),
               ),
             );

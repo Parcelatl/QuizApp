@@ -1,51 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 
-class AnimatedProgressbar extends StatelessWidget {
-  final double value;
-  final double height;
+class AnimatedProgressbar extends StatefulWidget {
+  const AnimatedProgressbar({
+    Key? key,
+  }) : super(key: key);
 
-  const AnimatedProgressbar({Key? key, required this.value, this.height = 12})
-      : super(key: key);
+  @override
+  State<AnimatedProgressbar> createState() => _AnimatedProgressbarState();
+}
+
+class _AnimatedProgressbarState extends State<AnimatedProgressbar> {
+  double progressValue = 0;
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (BuildContext context, BoxConstraints box) {
-        return Container(
-          padding: const EdgeInsets.all(10),
-          width: box.maxWidth,
-          child: Stack(
-            children: [
-              Container(
-                height: height,
-                decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.background,
-                    borderRadius: BorderRadius.all(Radius.circular(height))),
-              ),
-              AnimatedContainer(
-                duration: const Duration(milliseconds: 800),
-                curve: Curves.easeOutCubic,
-                height: height,
-                width: box.maxWidth * _floor(value),
-                decoration: BoxDecoration(
-                    color: _colorGen(value),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(height),
-                    )),
-              ),
-            ],
-          ),
-        );
-      },
+    return FAProgressBar(
+      size: 12,
+      direction: Axis.horizontal,
+      currentValue: progressValue,
+      maxValue: 100,
+      backgroundColor: Colors.grey.shade800,
+      progressColor: Colors.green.shade500,
     );
   }
 
-  _floor(double value, [min = 0.0]) {
-    return value.sign <= min ? min : value;
-  }
-
-  _colorGen(double value) {
-    int rgb = (value * 255).toInt();
-    return Colors.deepOrange.withGreen(rgb).withRed(255 - rgb);
+  void updateProgress() {
+    setState((){progressValue += 10;});
   }
 }

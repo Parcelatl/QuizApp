@@ -5,10 +5,27 @@ class Error extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
-      height: 250,
-      width: 250,
-      child: Text('error'),
+    return Scaffold(
+      body: Center(
+        child: SizedBox(
+          height: 150,
+          width: 250,
+          child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                const Text('An error has occured.'),
+                ElevatedButton(
+                    onPressed: () => Navigator.pushNamed(context, '/'),
+                    child: const Text('Ok')),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
