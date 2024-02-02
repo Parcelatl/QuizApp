@@ -21,14 +21,57 @@ class _MathExamState extends State<MathExam> {
   @override
   Widget build(BuildContext context) {
     List<Question> question = [
-      Question(
-          id: '1',
-          title: 'what is 10+12',
-          option: {'22': true, '32': false, '42': false, '23': false}),
+      Question(id: '1', title: 'What is Pi?', option: {
+        '3.13159': false,
+        '3.15159': false,
+        '3.14159': true,
+        '3.14158': false
+      }),
       Question(
           id: '2',
-          title: 'what is 25%5',
-          option: {'5': true, '6': false, '0.2': false, '12': false})
+          title:
+              'Find the missing terms in the multiple of 3: 3, 3, 6, 9, __, 15',
+          option: {'10': false, '13': false, '12': true, '14': false}),
+      Question(
+          id: '3',
+          title: 'What is the next prime number after 5?',
+          option: {'6': false, '7': true, '9': false, '11': false}),
+      Question(id: '4', title: 'Is a triangle a:', option: {
+        'Two-dimensional shape': true,
+        'Three-dimensional shape': false,
+        'One-dimensional shape': false,
+        'None of the above': false
+      }),
+      Question(
+          id: '5',
+          title: 'What is the value of cos 360°?',
+          option: {'0': false, '1': true, '-1': false, 'Undefined': false}),
+      Question(
+          id: '6',
+          title: 'What is the result of 5! (factorial)?',
+          option: {'20': false, '60': false, '120': true, '240': false}),
+      Question(
+          id: '7',
+          title: 'What is the sum of the angles in a triangle?',
+          option: {
+            '90 degrees': false,
+            '180 degrees': true,
+            '270 degrees': false,
+            '360 degrees': false
+          }),
+      Question(
+          id: '8',
+          title: 'Which of the following is an irrational number?',
+          option: {'0.5': false, '1': false, '√2': true, '3/4': false}),
+      Question(
+          id: '9',
+          title: 'What is the value of sin(90°)?',
+          option: {'0': false, '1': true, '-1': false, 'Undefined': false}),
+      Question(
+          id: '10',
+          title:
+              'A store offers a 20% discount on a 50 SAR item. What is the final price?',
+          option: {'10': false, '20': false, '30': true, '40': false}),
     ];
     // ignore: non_constant_identifier_names
     List<Icon> Strike = [];
