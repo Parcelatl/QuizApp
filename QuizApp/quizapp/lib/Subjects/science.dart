@@ -115,7 +115,7 @@ class _ScienceExamState extends State<ScienceExam> {
             context: context,
             builder: ((context) => CompletePage(
                   Score: score,
-                  QuizTitle: 'Math',
+                  QuizTitle: 'science',
                   StartOver: StartOver,
                 )));
       } else if (isPresed == true) {

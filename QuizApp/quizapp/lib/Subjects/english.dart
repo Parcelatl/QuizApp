@@ -130,8 +130,9 @@ class _EnglishExamState extends State<EnglishExam> {
             context: context,
             builder: ((context) => CompletePage(
                   Score: score,
-                  QuizTitle: 'Math',
+                  QuizTitle: 'English',
                   StartOver: StartOver,
+                  //QuitMethod: your method
                 )));
       } else if (isPresed == true) {
         if (index == question.length - 1) {
