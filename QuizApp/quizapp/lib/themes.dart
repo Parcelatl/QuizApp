@@ -8,8 +8,8 @@ var appTheme = ThemeData(
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      backgroundColor: Colors.grey[850],
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22.5)),
+      backgroundColor: Color.fromARGB(51, 155, 0, 140),
       foregroundColor: Colors.white,
     ),
   ),

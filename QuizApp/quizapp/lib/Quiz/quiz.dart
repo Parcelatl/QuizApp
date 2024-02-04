@@ -4,30 +4,37 @@ import 'package:flutter/material.dart';
 import '../Quiz/models/options_state.dart';
 
 class CompletePage extends StatelessWidget {
-  const CompletePage({super.key, required this.Score, required this.QuizTitle, required this.StartOver});
+  const CompletePage({super.key, required this.Score, required this.QuizTitle, required this.StartOver, required this.backToStart});
   final int Score;
   final String QuizTitle;
   final VoidCallback StartOver;
+  final VoidCallback backToStart;
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      title: const Text('Congratulations!' , textAlign: TextAlign.center),
       content: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(5),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
               'You completed the $QuizTitle quiz\nyour score is: $Score',
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.center, textScaler: const TextScaler.linear(1.25),
             ),
             const SizedBox(
               height: 10,
             ),
             ElevatedButton(
               onPressed: StartOver,
-              child: const Text('Start over'),
-            )
+              child: const Text('Start over' , textScaler: TextScaler.linear(1.25),),
+            ),
+            ElevatedButton(
+              onPressed: backToStart,
+              child: const Text("Quit" , textScaler: TextScaler.linear(1.25),),
+            ),
           ],
         ),
       ),
@@ -63,11 +70,16 @@ class NextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 5),
-      child: ElevatedButton(
-        onPressed: nextquestion,
-        child: const Text(
-          'Next question ',
-          textAlign: TextAlign.center,
+      child: SizedBox(
+        height: 75,
+        width: 250,
+        child: ElevatedButton(
+          onPressed: nextquestion,
+          child: const Text(
+            'Next question ',
+            textAlign: TextAlign.center,
+            textScaler: TextScaler.linear(2)
+          ),
         ),
       ),
     );
@@ -86,7 +98,8 @@ class OptionDisplay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: color ?? unselected,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(45)),
+      color: color,
       child: ListTile(
         title: Text(
           textAlign: TextAlign.center,

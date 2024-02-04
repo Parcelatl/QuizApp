@@ -123,6 +123,12 @@ class _EnglishExamState extends State<EnglishExam> {
       Navigator.pop(context);
     }
 
+    void backToStart() {
+      StartOver();
+      Navigator.pushNamedAndRemoveUntil(context, '/' , (route) => false); 
+      Navigator.pushNamed(context, '/topics');
+    }
+
     //loop through _question ==index
     void nextQuestion() {
       if (index == question.length - 1) {
@@ -132,6 +138,8 @@ class _EnglishExamState extends State<EnglishExam> {
                   Score: score,
                   QuizTitle: 'Math',
                   StartOver: StartOver,
+                  backToStart: backToStart,
+
                 )));
       } else if (isPresed == true) {
         if (index == question.length - 1) {
