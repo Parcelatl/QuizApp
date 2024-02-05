@@ -72,7 +72,7 @@ class ProfileScreen extends StatelessWidget {
           ColoredBox(
             color: Color.fromARGB(255, 50, 50, 50),
             child: SizedBox(
-              height: 524,
+              height: 596,
               child: ListView(
                 children: [
                   achievementTile(const Icon(Icons.circle_outlined), 'Math beginner', 'Finish Math quiz.', mathQuizFinished),
@@ -102,18 +102,6 @@ class ProfileScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SizedBox(
-                  height: 60,
-                  width: 300,
-                  child: ElevatedButton(
-                    child: const Text(
-                      'Delete Account',
-                      textScaler: TextScaler.linear(2),
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
-                const SizedBox(height: 12),
                 SizedBox(
                   height: 60,
                   width: 200,
