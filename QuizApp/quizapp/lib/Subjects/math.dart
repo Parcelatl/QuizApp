@@ -16,6 +16,8 @@ int index = 0;
 bool isPresed = false;
 int score = 0;
 bool isSelected = false;
+bool mathQuizFinished = false;
+bool mathPro = false;
 
 class _MathExamState extends State<MathExam> {
   @override
@@ -82,6 +84,7 @@ class _MathExamState extends State<MathExam> {
         score = 0;
         isPresed = false;
         isSelected = false;
+        mathQuizFinished = true;
         Strike.clear();
       });
       Navigator.pop(context);
@@ -89,6 +92,7 @@ class _MathExamState extends State<MathExam> {
 
         void backToStart() {
       StartOver();
+      mathQuizFinished = true;
       Navigator.pushNamedAndRemoveUntil(context, '/' , (route) => false); 
       Navigator.pushNamed(context, '/topics');
     }
@@ -123,6 +127,8 @@ class _MathExamState extends State<MathExam> {
       } else {
         if (value == true) {
           score += 100;
+          if(score >= 1000)
+          mathPro = true;
           setState(() {
             isPresed = true;
             isSelected = true;

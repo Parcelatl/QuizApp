@@ -16,6 +16,8 @@ int index = 0;
 bool isPresed = false;
 int score = 0;
 bool isSelected = false;
+bool techQuizFinished = false;
+bool techPro = false;
 
 class _TechnologyExamState extends State<TechnologyExam> {
   @override
@@ -110,6 +112,7 @@ class _TechnologyExamState extends State<TechnologyExam> {
         score = 0;
         isPresed = false;
         isSelected = false;
+        techQuizFinished = true;
         Strike.clear();
       });
       Navigator.pop(context);
@@ -117,6 +120,7 @@ class _TechnologyExamState extends State<TechnologyExam> {
 
         void backToStart() {
       StartOver();
+      techQuizFinished = true;
       Navigator.pushNamedAndRemoveUntil(context, '/' , (route) => false); 
       Navigator.pushNamed(context, '/topics');
     }
@@ -151,6 +155,8 @@ class _TechnologyExamState extends State<TechnologyExam> {
       } else {
         if (value == true) {
           score += 100;
+          if(score >= 1000)
+          techPro = true;
           setState(() {
             isPresed = true;
             isSelected = true;

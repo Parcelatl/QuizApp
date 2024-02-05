@@ -69,7 +69,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 150),
                     SizedBox(
-                      height: 100,
+                      height: 85,
                       width: 300,
                       child: ElevatedButton(
                         onPressed: () => Navigator.pushNamed(context, '/topics'),
@@ -78,11 +78,11 @@ class HomeScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 25),
                     SizedBox(
-                      height: 100,
-                      width: 400,
+                      height: 85,
+                      width: 350,
                       child: ElevatedButton(
                         onPressed: () => Navigator.pushNamed(context, '/profile'),
-                        child: const Text('Achievements', textScaler: TextScaler.linear(3.5)),
+                        child: const Text('Settings', textScaler: TextScaler.linear(3.5)),
                       ),
                     ),
                     const SizedBox(height: 5),

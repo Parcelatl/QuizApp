@@ -14,11 +14,10 @@ class CompletePage extends StatelessWidget {
     return AlertDialog(
       title: const Text('Congratulations!' , textAlign: TextAlign.center),
       content: Padding(
-        padding: const EdgeInsets.all(5),
+        padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
               'You completed the $QuizTitle quiz\nyour score is: $Score',
@@ -27,13 +26,20 @@ class CompletePage extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            ElevatedButton(
-              onPressed: StartOver,
-              child: const Text('Start over' , textScaler: TextScaler.linear(1.25),),
+            SizedBox(
+              height: 50,
+              child: ElevatedButton(
+                onPressed: StartOver,
+                child: const Text('Start over' , textScaler: TextScaler.linear(1.75),),
+              ),
             ),
-            ElevatedButton(
-              onPressed: backToStart,
-              child: const Text("Quit" , textScaler: TextScaler.linear(1.25),),
+            SizedBox(height: 15),
+            SizedBox(
+              height: 50,
+              child: ElevatedButton(
+                onPressed: backToStart,
+                child: const Text("Quit" , textScaler: TextScaler.linear(1.75),),
+              ),
             ),
           ],
         ),
@@ -71,7 +77,7 @@ class NextButton extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: SizedBox(
-        height: 75,
+        height: 60,
         width: 250,
         child: ElevatedButton(
           onPressed: nextquestion,

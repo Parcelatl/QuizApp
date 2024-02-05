@@ -16,6 +16,8 @@ int index = 0;
 bool isPresed = false;
 int score = 0;
 bool isSelected = false;
+bool spaceQuizFinished = false;
+bool spacePro = false;
 
 class _SpaceExamState extends State<SpaceExam> {
   @override
@@ -123,6 +125,7 @@ class _SpaceExamState extends State<SpaceExam> {
         score = 0;
         isPresed = false;
         isSelected = false;
+        spaceQuizFinished = true;
         Strike.clear();
       });
       Navigator.pop(context);
@@ -130,6 +133,7 @@ class _SpaceExamState extends State<SpaceExam> {
 
         void backToStart() {
       StartOver();
+      spaceQuizFinished = true;
       Navigator.pushNamedAndRemoveUntil(context, '/' , (route) => false); 
       Navigator.pushNamed(context, '/topics');
     }
@@ -164,6 +168,8 @@ class _SpaceExamState extends State<SpaceExam> {
       } else {
         if (value == true) {
           score += 100;
+          if(score >= 1000)
+          spacePro = true;
           setState(() {
             isPresed = true;
             isSelected = true;

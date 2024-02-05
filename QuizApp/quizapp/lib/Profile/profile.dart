@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:quizapp/Subjects/english.dart';
+import 'package:quizapp/Subjects/history.dart';
+import 'package:quizapp/Subjects/math.dart';
+import 'package:quizapp/Subjects/science.dart';
+import 'package:quizapp/Subjects/space.dart';
+import 'package:quizapp/Subjects/technology.dart';
 
 import '../Services/auth.dart';
 
@@ -66,27 +72,23 @@ class ProfileScreen extends StatelessWidget {
           ColoredBox(
             color: Color.fromARGB(255, 50, 50, 50),
             child: SizedBox(
-              height: 493,
+              height: 524,
               child: ListView(
                 children: [
-                  achievementTile(const Icon(Icons.spa), 'Achievement Title',
-                      'Achievement description'),
-                  achievementTile(const Icon(Icons.spa), 'Achievement Title',
-                      'Achievement description'),
-                  achievementTile(const Icon(Icons.spa), 'Achievement Title',
-                      'Achievement description'),
-                  achievementTile(const Icon(Icons.spa), 'Achievement Title',
-                      'Achievement description'),
-                  achievementTile(const Icon(Icons.spa), 'Achievement Title',
-                      'Achievement description'),
-                  achievementTile(const Icon(Icons.spa), 'Achievement Title',
-                      'Achievement description'),
-                  achievementTile(const Icon(Icons.spa), 'Achievement Title',
-                      'Achievement description'),
-                  achievementTile(const Icon(Icons.spa), 'Achievement Title',
-                      'Achievement description'),
-                  achievementTile(const Icon(Icons.spa), 'Achievement Title',
-                      'Achievement description'),
+                  achievementTile(const Icon(Icons.circle_outlined), 'Math beginner', 'Finish Math quiz.', mathQuizFinished),
+                  achievementTile(const Icon(Icons.circle_outlined), 'Math pro', 'Finish Math quiz with a score of 1000.', mathPro),
+                  achievementTile(const Icon(Icons.circle_outlined), 'English beginner', 'Finish English quiz.', englishQuizFinished),
+                  achievementTile(const Icon(Icons.circle_outlined), 'English pro', 'Finish English quiz with score of 1000.', englishPro),
+                  achievementTile(const Icon(Icons.circle_outlined), 'Science beginner', 'Finish Science quiz.', scienceQuizFinished),
+                  achievementTile(const Icon(Icons.circle_outlined), 'Science pro', 'Finish Science quiz with a score of 1000.', sciencePro),
+                  achievementTile(const Icon(Icons.circle_outlined), 'Technology beginner', 'Finish Technology quiz.', techQuizFinished),
+                  achievementTile(const Icon(Icons.circle_outlined), 'Technology pro', 'Finish Technology quiz with a score of 1000.', techPro),
+                  achievementTile(const Icon(Icons.circle_outlined), 'History beginner', 'Finish History quiz.', historyQuizFinished),
+                  achievementTile(const Icon(Icons.circle_outlined), 'History pro', 'Finish History quiz with a score of 1000.', historyPro),
+                  achievementTile(const Icon(Icons.circle_outlined), 'Space beginner', 'Finish Space quiz.', spaceQuizFinished),
+                  achievementTile(const Icon(Icons.circle_outlined), 'Space pro', 'Finish Space quiz with a score of 1000.', spacePro),
+                  achievementTile(const Icon(Icons.circle_outlined), 'One to rule them all', 'Get a score of 1000 on all topics.', (mathPro && englishPro && sciencePro && techPro && historyPro && spacePro)),
+                
                 ],
               ),
             ),
@@ -101,7 +103,7 @@ class ProfileScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
-                  height: 75,
+                  height: 60,
                   width: 300,
                   child: ElevatedButton(
                     child: const Text(
@@ -113,7 +115,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 12),
                 SizedBox(
-                  height: 75,
+                  height: 60,
                   width: 200,
                   child: ElevatedButton(
                     child: const Text(
@@ -135,20 +137,17 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-  Padding achievementTile(Icon achIcon, String title, String subtitle) {
+  Padding achievementTile(Icon achIcon, String title, String subtitle, bool completed) {
     return Padding(
       padding: const EdgeInsets.all(4),
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22.5)),
         clipBehavior: Clip.antiAlias,
-        child: InkWell(
-          onTap: () {},
-          child: ListTile(
-            tileColor: Colors.grey[900],
-            leading: achIcon,
-            title: Text(title , textScaler: const TextScaler.linear(1.4)),
-            subtitle: Text(subtitle , textScaler: const TextScaler.linear(1.4)),
-          ),
+        child: ListTile(
+          tileColor: Colors.grey[900],
+          leading: (completed == true) ? const Icon(Icons.check) : achIcon ,
+          title: Text(title , textScaler: const TextScaler.linear(1.4)),
+          subtitle: Text(subtitle , textScaler: const TextScaler.linear(1.4)),
         ),
       ),
     );

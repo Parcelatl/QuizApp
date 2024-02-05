@@ -16,6 +16,8 @@ int index = 0;
 bool isPresed = false;
 int score = 0;
 bool isSelected = false;
+bool englishQuizFinished = false;
+bool englishPro = false;
 
 class _EnglishExamState extends State<EnglishExam> {
   @override
@@ -118,6 +120,7 @@ class _EnglishExamState extends State<EnglishExam> {
         score = 0;
         isPresed = false;
         isSelected = false;
+        englishQuizFinished = true;
         Strike.clear();
       });
       Navigator.pop(context);
@@ -125,6 +128,7 @@ class _EnglishExamState extends State<EnglishExam> {
 
     void backToStart() {
       StartOver();
+      englishQuizFinished = true;
       Navigator.pushNamedAndRemoveUntil(context, '/' , (route) => false); 
       Navigator.pushNamed(context, '/topics');
     }
@@ -160,6 +164,8 @@ class _EnglishExamState extends State<EnglishExam> {
       } else {
         if (value == true) {
           score += 100;
+          if(score >= 1000)
+          englishPro = true;
           setState(() {
             isPresed = true;
             isSelected = true;

@@ -31,7 +31,7 @@ class TopicsScreen extends StatelessWidget {
   Card cardTopic(String name, var navName, String image, BuildContext context) {
     return Card(
       clipBehavior: Clip.antiAlias,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22.5)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(35)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [

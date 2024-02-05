@@ -16,6 +16,8 @@ int index = 0;
 bool isPresed = false;
 int score = 0;
 bool isSelected = false;
+bool historyQuizFinished = false;
+bool historyPro = false;
 
 class _HistoryExamState extends State<HistoryExam> {
   @override
@@ -107,6 +109,7 @@ class _HistoryExamState extends State<HistoryExam> {
         score = 0;
         isPresed = false;
         isSelected = false;
+        historyQuizFinished = true;
         Strike.clear();
       });
       Navigator.pop(context);
@@ -114,6 +117,7 @@ class _HistoryExamState extends State<HistoryExam> {
 
         void backToStart() {
       StartOver();
+      historyQuizFinished = true;
       Navigator.pushNamedAndRemoveUntil(context, '/' , (route) => false); 
       Navigator.pushNamed(context, '/topics');
     }
@@ -148,6 +152,8 @@ class _HistoryExamState extends State<HistoryExam> {
       } else {
         if (value == true) {
           score += 100;
+          if(score >= 1000)
+          historyPro = true;
           setState(() {
             isPresed = true;
             isSelected = true;

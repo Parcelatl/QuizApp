@@ -16,6 +16,8 @@ int index = 0;
 bool isPresed = false;
 int score = 0;
 bool isSelected = false;
+bool scienceQuizFinished = false;
+bool sciencePro = false;
 
 class _ScienceExamState extends State<ScienceExam> {
   @override
@@ -103,6 +105,7 @@ class _ScienceExamState extends State<ScienceExam> {
         score = 0;
         isPresed = false;
         isSelected = false;
+        scienceQuizFinished = true;
         Strike.clear();
       });
       Navigator.pop(context);
@@ -110,6 +113,7 @@ class _ScienceExamState extends State<ScienceExam> {
 
         void backToStart() {
       StartOver();
+      scienceQuizFinished = true;
       Navigator.pushNamedAndRemoveUntil(context, '/' , (route) => false); 
       Navigator.pushNamed(context, '/topics');
     }
@@ -144,6 +148,8 @@ class _ScienceExamState extends State<ScienceExam> {
       } else {
         if (value == true) {
           score += 100;
+          if(score >= 1000)
+          sciencePro = true;
           setState(() {
             isPresed = true;
             isSelected = true;
