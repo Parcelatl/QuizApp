@@ -125,7 +125,7 @@ class _ScienceExamState extends State<ScienceExam> {
             context: context,
             builder: ((context) => CompletePage(
                   Score: score,
-                  QuizTitle: 'Math',
+                  QuizTitle: 'Science',
                   StartOver: StartOver,
                   backToStart: backToStart,
                 )));

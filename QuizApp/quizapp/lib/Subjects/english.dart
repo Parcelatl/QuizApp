@@ -140,7 +140,7 @@ class _EnglishExamState extends State<EnglishExam> {
             context: context,
             builder: ((context) => CompletePage(
                   Score: score,
-                  QuizTitle: 'Math',
+                  QuizTitle: 'English',
                   StartOver: StartOver,
                   backToStart: backToStart,
 

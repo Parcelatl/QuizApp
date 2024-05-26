@@ -129,7 +129,7 @@ class _HistoryExamState extends State<HistoryExam> {
             context: context,
             builder: ((context) => CompletePage(
                   Score: score,
-                  QuizTitle: 'Math',
+                  QuizTitle: 'History',
                   StartOver: StartOver,
                   backToStart: backToStart,
                 )));

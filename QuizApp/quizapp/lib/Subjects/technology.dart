@@ -132,7 +132,7 @@ class _TechnologyExamState extends State<TechnologyExam> {
             context: context,
             builder: ((context) => CompletePage(
                   Score: score,
-                  QuizTitle: 'Math',
+                  QuizTitle: 'Tech',
                   StartOver: StartOver,
                   backToStart: backToStart,
                 )));

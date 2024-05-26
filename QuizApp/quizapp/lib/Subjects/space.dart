@@ -145,7 +145,7 @@ class _SpaceExamState extends State<SpaceExam> {
             context: context,
             builder: ((context) => CompletePage(
                   Score: score,
-                  QuizTitle: 'Math',
+                  QuizTitle: 'Space',
                   StartOver: StartOver,
                   backToStart: backToStart,
                 )));
